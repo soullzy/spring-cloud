@@ -1,0 +1,24 @@
+#bootstrap.yml启动时加载一次，如需重新触发加载动作可以使用POST方式请求/refresh接口
+#该接口位于spring-boot-starter-actuator依赖
+#http://localhost:8011/refresh
+#springboot 1.5.X 以上默认开通了安全认证
+management:
+  security:
+    enabled: false
+
+spring:
+  application:
+    name: config-client
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: config-server
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1001/eureka/
+
+server:
+  port: 2001

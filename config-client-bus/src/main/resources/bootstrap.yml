@@ -1,0 +1,21 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1001/eureka/
+
+spring:
+  cloud:
+    config:
+      #uri: http://localhost:1201/
+      name: application
+      profile: dev
+      label: master
+      discovery:
+        enabled: true
+        serviceId: config-server
+  rabbitmq:
+      host: localhost
+      port: 5672
+      username: qq
+      password: 1234
+      virtual-host: /qq
